@@ -10,6 +10,8 @@ namespace ImageProcessor
     {
         static void Main(string[] args)
         {
+            string PathToPhoto = @"D:\Download\New wallpapers №7";
+            ImageProcessor.SortOnGPS(PathToPhoto);
             Console.ReadKey();
         }
     }
