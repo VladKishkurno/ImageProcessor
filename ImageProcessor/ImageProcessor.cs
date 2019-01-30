@@ -81,7 +81,7 @@ namespace ImageProcessor
 
                 string date = DateTimeToString(GetImageDate(photo));
 
-                g.DrawString(date, new Font("Tahoma", 8), Brushes.White, new System.Drawing.Point(image.Width - 300, 10));
+                g.DrawString(date, new Font("Tahoma", 8), Brushes.DarkRed, new System.Drawing.Point((image.Width - 350), 10));
 
                 string destFolder = $@"{destDir}\{photo.GetName}{photo.GetFileInfo.Extension}";
 
@@ -162,14 +162,14 @@ namespace ImageProcessor
                         using (StreamReader reader = new StreamReader(stream))
                         {
                             string read = $@"{reader.ReadToEnd()}";
-                            var adapter = new StreamWriter("D:/History.xml");
+                            var adapter = new StreamWriter(@"C:\Users\User\source\repos\ImageProcessor\ImageProcessor\ImageProcessor.xml");
 
                             adapter.Write(read);
                             adapter.Dispose();
 
                             XmlSerializer xmlSerializer = new XmlSerializer(typeof(GeoObjectCollection));
 
-                            using (XmlReader xmlreader = XmlReader.Create("D:/History.xml"))
+                            using (XmlReader xmlreader = XmlReader.Create(@"C:\Users\User\source\repos\ImageProcessor\ImageProcessor\ImageProcessor.xml"))
                             {
                                 while (xmlreader.Read())
                                 {

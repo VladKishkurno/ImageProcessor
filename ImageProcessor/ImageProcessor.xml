@@ -1,0 +1,408 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ymaps xmlns="http://maps.yandex.ru/ymaps/1.x" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="     http://maps.yandex.ru/business/1.x http://maps.yandex.ru/schemas/business/1.x/business.xsd     http://maps.yandex.ru/geocoder/1.x http://maps.yandex.ru/schemas/geocoder/1.x/geocoder.xsd     http://maps.yandex.ru/psearch/1.x http://maps.yandex.ru/schemas/psearch/1.x/psearch.xsd     http://maps.yandex.ru/search/1.x http://maps.yandex.ru/schemas/search/1.x/search.xsd     http://maps.yandex.ru/web/1.x http://maps.yandex.ru/schemas/web/1.x/web.xsd     http://maps.yandex.ru/search/internal/1.x http://maps.yandex.ru/schemas/search/internal/1.x/internal.xsd">
+  <GeoObjectCollection>
+    <metaDataProperty xmlns="http://www.opengis.net/gml">
+      <GeocoderResponseMetaData xmlns="http://maps.yandex.ru/geocoder/1.x">
+        <request>N 53° 56' 19,5" E 27° 21' 4"</request>
+        <found>7</found>
+        <results>10</results>
+        <Point xmlns="http://www.opengis.net/gml">
+          <pos>27.351111 53.938750</pos>
+        </Point>
+      </GeocoderResponseMetaData>
+    </metaDataProperty>
+    <featureMember xmlns="http://www.opengis.net/gml">
+      <GeoObject xmlns="http://maps.yandex.ru/ymaps/1.x" xmlns:gml="http://www.opengis.net/gml" gml:id="1">
+        <metaDataProperty xmlns="http://www.opengis.net/gml">
+          <GeocoderMetaData xmlns="http://maps.yandex.ru/geocoder/1.x">
+            <kind>house</kind>
+            <text>Беларусь, Минская область, Минский район, Ждановичский сельсовет, агрогородок Ратомка, Привокзальный переулок, 3</text>
+            <precision>exact</precision>
+            <Address xmlns="http://maps.yandex.ru/address/1.x">
+              <country_code>BY</country_code>
+              <formatted>Минская область, Минский район, Ждановичский сельсовет, агрогородок Ратомка, Привокзальный переулок, 3</formatted>
+              <Component>
+                <kind>country</kind>
+                <name>Беларусь</name>
+              </Component>
+              <Component>
+                <kind>province</kind>
+                <name>Минская область</name>
+              </Component>
+              <Component>
+                <kind>area</kind>
+                <name>Минский район</name>
+              </Component>
+              <Component>
+                <kind>area</kind>
+                <name>Ждановичский сельсовет</name>
+              </Component>
+              <Component>
+                <kind>locality</kind>
+                <name>агрогородок Ратомка</name>
+              </Component>
+              <Component>
+                <kind>street</kind>
+                <name>Привокзальный переулок</name>
+              </Component>
+              <Component>
+                <kind>house</kind>
+                <name>3</name>
+              </Component>
+            </Address>
+            <AddressDetails xmlns="urn:oasis:names:tc:ciq:xsdschema:xAL:2.0">
+              <Country>
+                <AddressLine>Минская область, Минский район, Ждановичский сельсовет, агрогородок Ратомка, Привокзальный переулок, 3</AddressLine>
+                <CountryNameCode>BY</CountryNameCode>
+                <CountryName>Беларусь</CountryName>
+                <AdministrativeArea>
+                  <AdministrativeAreaName>Минская область</AdministrativeAreaName>
+                  <SubAdministrativeArea>
+                    <SubAdministrativeAreaName>Минский район</SubAdministrativeAreaName>
+                    <Locality>
+                      <LocalityName>агрогородок Ратомка</LocalityName>
+                      <Thoroughfare>
+                        <ThoroughfareName>Привокзальный переулок</ThoroughfareName>
+                        <Premise>
+                          <PremiseNumber>3</PremiseNumber>
+                        </Premise>
+                      </Thoroughfare>
+                    </Locality>
+                  </SubAdministrativeArea>
+                </AdministrativeArea>
+              </Country>
+            </AddressDetails>
+          </GeocoderMetaData>
+        </metaDataProperty>
+        <description xmlns="http://www.opengis.net/gml">агрогородок Ратомка, Ждановичский сельсовет, Минский район, Минская область, Беларусь</description>
+        <name xmlns="http://www.opengis.net/gml">Привокзальный переулок, 3</name>
+        <boundedBy xmlns="http://www.opengis.net/gml">
+          <Envelope>
+            <lowerCorner>27.346846 53.936327</lowerCorner>
+            <upperCorner>27.355057 53.941172</upperCorner>
+          </Envelope>
+        </boundedBy>
+        <Point xmlns="http://www.opengis.net/gml">
+          <pos>27.350952 53.93875</pos>
+        </Point>
+      </GeoObject>
+    </featureMember>
+    <featureMember xmlns="http://www.opengis.net/gml">
+      <GeoObject xmlns="http://maps.yandex.ru/ymaps/1.x" xmlns:gml="http://www.opengis.net/gml" gml:id="2">
+        <metaDataProperty xmlns="http://www.opengis.net/gml">
+          <GeocoderMetaData xmlns="http://maps.yandex.ru/geocoder/1.x">
+            <kind>street</kind>
+            <text>Беларусь, Минская область, Минский район, Ждановичский сельсовет, агрогородок Ратомка, Привокзальный переулок</text>
+            <precision>street</precision>
+            <Address xmlns="http://maps.yandex.ru/address/1.x">
+              <country_code>BY</country_code>
+              <formatted>Минская область, Минский район, Ждановичский сельсовет, агрогородок Ратомка, Привокзальный переулок</formatted>
+              <Component>
+                <kind>country</kind>
+                <name>Беларусь</name>
+              </Component>
+              <Component>
+                <kind>province</kind>
+                <name>Минская область</name>
+              </Component>
+              <Component>
+                <kind>area</kind>
+                <name>Минский район</name>
+              </Component>
+              <Component>
+                <kind>area</kind>
+                <name>Ждановичский сельсовет</name>
+              </Component>
+              <Component>
+                <kind>locality</kind>
+                <name>агрогородок Ратомка</name>
+              </Component>
+              <Component>
+                <kind>street</kind>
+                <name>Привокзальный переулок</name>
+              </Component>
+            </Address>
+            <AddressDetails xmlns="urn:oasis:names:tc:ciq:xsdschema:xAL:2.0">
+              <Country>
+                <AddressLine>Минская область, Минский район, Ждановичский сельсовет, агрогородок Ратомка, Привокзальный переулок</AddressLine>
+                <CountryNameCode>BY</CountryNameCode>
+                <CountryName>Беларусь</CountryName>
+                <AdministrativeArea>
+                  <AdministrativeAreaName>Минская область</AdministrativeAreaName>
+                  <SubAdministrativeArea>
+                    <SubAdministrativeAreaName>Минский район</SubAdministrativeAreaName>
+                    <Locality>
+                      <LocalityName>агрогородок Ратомка</LocalityName>
+                      <Thoroughfare>
+                        <ThoroughfareName>Привокзальный переулок</ThoroughfareName>
+                      </Thoroughfare>
+                    </Locality>
+                  </SubAdministrativeArea>
+                </AdministrativeArea>
+              </Country>
+            </AddressDetails>
+          </GeocoderMetaData>
+        </metaDataProperty>
+        <description xmlns="http://www.opengis.net/gml">агрогородок Ратомка, Ждановичский сельсовет, Минский район, Минская область, Беларусь</description>
+        <name xmlns="http://www.opengis.net/gml">Привокзальный переулок</name>
+        <boundedBy xmlns="http://www.opengis.net/gml">
+          <Envelope>
+            <lowerCorner>27.349146 53.937865</lowerCorner>
+            <upperCorner>27.351509 53.940817</upperCorner>
+          </Envelope>
+        </boundedBy>
+        <Point xmlns="http://www.opengis.net/gml">
+          <pos>27.3507 53.940017</pos>
+        </Point>
+      </GeoObject>
+    </featureMember>
+    <featureMember xmlns="http://www.opengis.net/gml">
+      <GeoObject xmlns="http://maps.yandex.ru/ymaps/1.x" xmlns:gml="http://www.opengis.net/gml" gml:id="3">
+        <metaDataProperty xmlns="http://www.opengis.net/gml">
+          <GeocoderMetaData xmlns="http://maps.yandex.ru/geocoder/1.x">
+            <kind>locality</kind>
+            <text>Беларусь, Минская область, Минский район, Ждановичский сельсовет, агрогородок Ратомка</text>
+            <precision>other</precision>
+            <Address xmlns="http://maps.yandex.ru/address/1.x">
+              <country_code>BY</country_code>
+              <formatted>Минская область, Минский район, Ждановичский сельсовет, агрогородок Ратомка</formatted>
+              <Component>
+                <kind>country</kind>
+                <name>Беларусь</name>
+              </Component>
+              <Component>
+                <kind>province</kind>
+                <name>Минская область</name>
+              </Component>
+              <Component>
+                <kind>area</kind>
+                <name>Минский район</name>
+              </Component>
+              <Component>
+                <kind>area</kind>
+                <name>Ждановичский сельсовет</name>
+              </Component>
+              <Component>
+                <kind>locality</kind>
+                <name>агрогородок Ратомка</name>
+              </Component>
+            </Address>
+            <AddressDetails xmlns="urn:oasis:names:tc:ciq:xsdschema:xAL:2.0">
+              <Country>
+                <AddressLine>Минская область, Минский район, Ждановичский сельсовет, агрогородок Ратомка</AddressLine>
+                <CountryNameCode>BY</CountryNameCode>
+                <CountryName>Беларусь</CountryName>
+                <AdministrativeArea>
+                  <AdministrativeAreaName>Минская область</AdministrativeAreaName>
+                  <SubAdministrativeArea>
+                    <SubAdministrativeAreaName>Минский район</SubAdministrativeAreaName>
+                    <Locality>
+                      <LocalityName>агрогородок Ратомка</LocalityName>
+                    </Locality>
+                  </SubAdministrativeArea>
+                </AdministrativeArea>
+              </Country>
+            </AddressDetails>
+          </GeocoderMetaData>
+        </metaDataProperty>
+        <description xmlns="http://www.opengis.net/gml">Ждановичский сельсовет, Минский район, Минская область, Беларусь</description>
+        <name xmlns="http://www.opengis.net/gml">агрогородок Ратомка</name>
+        <boundedBy xmlns="http://www.opengis.net/gml">
+          <Envelope>
+            <lowerCorner>27.297331 53.920571</lowerCorner>
+            <upperCorner>27.376796 53.950451</upperCorner>
+          </Envelope>
+        </boundedBy>
+        <Point xmlns="http://www.opengis.net/gml">
+          <pos>27.335168 53.939052</pos>
+        </Point>
+      </GeoObject>
+    </featureMember>
+    <featureMember xmlns="http://www.opengis.net/gml">
+      <GeoObject xmlns="http://maps.yandex.ru/ymaps/1.x" xmlns:gml="http://www.opengis.net/gml" gml:id="4">
+        <metaDataProperty xmlns="http://www.opengis.net/gml">
+          <GeocoderMetaData xmlns="http://maps.yandex.ru/geocoder/1.x">
+            <kind>area</kind>
+            <text>Беларусь, Минская область, Минский район, Ждановичский сельсовет</text>
+            <precision>other</precision>
+            <Address xmlns="http://maps.yandex.ru/address/1.x">
+              <country_code>BY</country_code>
+              <formatted>Минская область, Минский район, Ждановичский сельсовет</formatted>
+              <Component>
+                <kind>country</kind>
+                <name>Беларусь</name>
+              </Component>
+              <Component>
+                <kind>province</kind>
+                <name>Минская область</name>
+              </Component>
+              <Component>
+                <kind>area</kind>
+                <name>Минский район</name>
+              </Component>
+              <Component>
+                <kind>area</kind>
+                <name>Ждановичский сельсовет</name>
+              </Component>
+            </Address>
+            <AddressDetails xmlns="urn:oasis:names:tc:ciq:xsdschema:xAL:2.0">
+              <Country>
+                <AddressLine>Минская область, Минский район, Ждановичский сельсовет</AddressLine>
+                <CountryNameCode>BY</CountryNameCode>
+                <CountryName>Беларусь</CountryName>
+                <AdministrativeArea>
+                  <AdministrativeAreaName>Минская область</AdministrativeAreaName>
+                  <SubAdministrativeArea>
+                    <SubAdministrativeAreaName>Минский район</SubAdministrativeAreaName>
+                  </SubAdministrativeArea>
+                </AdministrativeArea>
+              </Country>
+            </AddressDetails>
+          </GeocoderMetaData>
+        </metaDataProperty>
+        <description xmlns="http://www.opengis.net/gml">Минский район, Минская область, Беларусь</description>
+        <name xmlns="http://www.opengis.net/gml">Ждановичский сельсовет</name>
+        <boundedBy xmlns="http://www.opengis.net/gml">
+          <Envelope>
+            <lowerCorner>27.243405 53.871153</lowerCorner>
+            <upperCorner>27.469646 54.003326</upperCorner>
+          </Envelope>
+        </boundedBy>
+        <Point xmlns="http://www.opengis.net/gml">
+          <pos>27.374658 53.936497</pos>
+        </Point>
+      </GeoObject>
+    </featureMember>
+    <featureMember xmlns="http://www.opengis.net/gml">
+      <GeoObject xmlns="http://maps.yandex.ru/ymaps/1.x" xmlns:gml="http://www.opengis.net/gml" gml:id="5">
+        <metaDataProperty xmlns="http://www.opengis.net/gml">
+          <GeocoderMetaData xmlns="http://maps.yandex.ru/geocoder/1.x">
+            <kind>area</kind>
+            <text>Беларусь, Минская область, Минский район</text>
+            <precision>other</precision>
+            <Address xmlns="http://maps.yandex.ru/address/1.x">
+              <country_code>BY</country_code>
+              <formatted>Минская область, Минский район</formatted>
+              <Component>
+                <kind>country</kind>
+                <name>Беларусь</name>
+              </Component>
+              <Component>
+                <kind>province</kind>
+                <name>Минская область</name>
+              </Component>
+              <Component>
+                <kind>area</kind>
+                <name>Минский район</name>
+              </Component>
+            </Address>
+            <AddressDetails xmlns="urn:oasis:names:tc:ciq:xsdschema:xAL:2.0">
+              <Country>
+                <AddressLine>Минская область, Минский район</AddressLine>
+                <CountryNameCode>BY</CountryNameCode>
+                <CountryName>Беларусь</CountryName>
+                <AdministrativeArea>
+                  <AdministrativeAreaName>Минская область</AdministrativeAreaName>
+                  <SubAdministrativeArea>
+                    <SubAdministrativeAreaName>Минский район</SubAdministrativeAreaName>
+                  </SubAdministrativeArea>
+                </AdministrativeArea>
+              </Country>
+            </AddressDetails>
+          </GeocoderMetaData>
+        </metaDataProperty>
+        <description xmlns="http://www.opengis.net/gml">Минская область, Беларусь</description>
+        <name xmlns="http://www.opengis.net/gml">Минский район</name>
+        <boundedBy xmlns="http://www.opengis.net/gml">
+          <Envelope>
+            <lowerCorner>27.016868 53.628208</lowerCorner>
+            <upperCorner>27.961806 54.25503</upperCorner>
+          </Envelope>
+        </boundedBy>
+        <Point xmlns="http://www.opengis.net/gml">
+          <pos>27.523311 54.002003</pos>
+        </Point>
+      </GeoObject>
+    </featureMember>
+    <featureMember xmlns="http://www.opengis.net/gml">
+      <GeoObject xmlns="http://maps.yandex.ru/ymaps/1.x" xmlns:gml="http://www.opengis.net/gml" gml:id="6">
+        <metaDataProperty xmlns="http://www.opengis.net/gml">
+          <GeocoderMetaData xmlns="http://maps.yandex.ru/geocoder/1.x">
+            <kind>province</kind>
+            <text>Беларусь, Минская область</text>
+            <precision>other</precision>
+            <Address xmlns="http://maps.yandex.ru/address/1.x">
+              <country_code>BY</country_code>
+              <formatted>Минская область</formatted>
+              <Component>
+                <kind>country</kind>
+                <name>Беларусь</name>
+              </Component>
+              <Component>
+                <kind>province</kind>
+                <name>Минская область</name>
+              </Component>
+            </Address>
+            <AddressDetails xmlns="urn:oasis:names:tc:ciq:xsdschema:xAL:2.0">
+              <Country>
+                <AddressLine>Минская область</AddressLine>
+                <CountryNameCode>BY</CountryNameCode>
+                <CountryName>Беларусь</CountryName>
+                <AdministrativeArea>
+                  <AdministrativeAreaName>Минская область</AdministrativeAreaName>
+                </AdministrativeArea>
+              </Country>
+            </AddressDetails>
+          </GeocoderMetaData>
+        </metaDataProperty>
+        <description xmlns="http://www.opengis.net/gml">Беларусь</description>
+        <name xmlns="http://www.opengis.net/gml">Минская область</name>
+        <boundedBy xmlns="http://www.opengis.net/gml">
+          <Envelope>
+            <lowerCorner>26.000164 52.387955</lowerCorner>
+            <upperCorner>29.493757 55.021473</upperCorner>
+          </Envelope>
+        </boundedBy>
+        <Point xmlns="http://www.opengis.net/gml">
+          <pos>27.461157 53.387641</pos>
+        </Point>
+      </GeoObject>
+    </featureMember>
+    <featureMember xmlns="http://www.opengis.net/gml">
+      <GeoObject xmlns="http://maps.yandex.ru/ymaps/1.x" xmlns:gml="http://www.opengis.net/gml" gml:id="7">
+        <metaDataProperty xmlns="http://www.opengis.net/gml">
+          <GeocoderMetaData xmlns="http://maps.yandex.ru/geocoder/1.x">
+            <kind>country</kind>
+            <text>Беларусь</text>
+            <precision>other</precision>
+            <Address xmlns="http://maps.yandex.ru/address/1.x">
+              <country_code>BY</country_code>
+              <formatted/>
+              <Component>
+                <kind>country</kind>
+                <name>Беларусь</name>
+              </Component>
+            </Address>
+            <AddressDetails xmlns="urn:oasis:names:tc:ciq:xsdschema:xAL:2.0">
+              <Country>
+                <AddressLine/>
+                <CountryNameCode>BY</CountryNameCode>
+                <CountryName>Беларусь</CountryName>
+              </Country>
+            </AddressDetails>
+          </GeocoderMetaData>
+        </metaDataProperty>
+        <name xmlns="http://www.opengis.net/gml">Беларусь</name>
+        <boundedBy xmlns="http://www.opengis.net/gml">
+          <Envelope>
+            <lowerCorner>23.178322 51.262035</lowerCorner>
+            <upperCorner>32.776533 56.171728</upperCorner>
+          </Envelope>
+        </boundedBy>
+        <Point xmlns="http://www.opengis.net/gml">
+          <pos>27.701393 52.858248</pos>
+        </Point>
+      </GeoObject>
+    </featureMember>
+  </GeoObjectCollection>
+</ymaps>
