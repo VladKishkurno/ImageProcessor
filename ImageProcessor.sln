@@ -5,6 +5,8 @@ VisualStudioVersion = 15.0.28306.52
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ImageProcessor", "ImageProcessor\ImageProcessor.csproj", "{066B4791-DC18-47B4-AE46-E4AA48DF6961}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GPSdecoder", "GPSdecoder\GPSdecoder.csproj", "{5458663A-210D-4C08-9898-98B3FFDD4915}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{066B4791-DC18-47B4-AE46-E4AA48DF6961}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{066B4791-DC18-47B4-AE46-E4AA48DF6961}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{066B4791-DC18-47B4-AE46-E4AA48DF6961}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5458663A-210D-4C08-9898-98B3FFDD4915}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5458663A-210D-4C08-9898-98B3FFDD4915}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5458663A-210D-4C08-9898-98B3FFDD4915}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5458663A-210D-4C08-9898-98B3FFDD4915}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

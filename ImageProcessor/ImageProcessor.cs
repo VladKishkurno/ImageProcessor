@@ -12,6 +12,7 @@ using System.Xml.Serialization;
 using Yandex;
 using Yandex.Geocoder;
 using Yandex.Geocoder.Raw;
+using System.Xml.Linq;
 
 namespace ImageProcessor
 {
@@ -38,7 +39,7 @@ namespace ImageProcessor
                 Console.WriteLine($"{count}/{photos.Count}");
                 Image image = Image.FromFile(photo.GetFileInfo.FullName);
                 
-                string date = DateTimeToString(GetImageDate(photo));
+                string date = image.GetImageDate(photo.GetFileInfo).DateTimeToString();
 
                 string destFolder = $@"{destDir}\{date}{photo.GetFileInfo.Extension}";
                 if (File.Exists(destFolder))
@@ -79,7 +80,7 @@ namespace ImageProcessor
                 Image image = Image.FromFile(photo.GetFileInfo.FullName);
                 Graphics g = Graphics.FromImage(image);
 
-                string date = DateTimeToString(GetImageDate(photo));
+                string date = image.GetImageDate(photo.GetFileInfo).DateTimeToString();
 
                 g.DrawString(date, new Font("Tahoma", 8), Brushes.DarkRed, new System.Drawing.Point((image.Width - 350), 10));
 
@@ -113,7 +114,7 @@ namespace ImageProcessor
                 Console.WriteLine($"{count}/{photos.Count}");
                 Image image = Image.FromFile(photo.GetFileInfo.FullName);
 
-                string year = GetYear(GetImageDate(photo));
+                string year = image.GetImageDate(photo.GetFileInfo).GetYear();
 
                 string destFolder = $@"{destDir}\{year}";
 
@@ -131,6 +132,7 @@ namespace ImageProcessor
 
         public static void SortOnGPS(string PathToPhoto)
         {
+            bool flag = false;
             var dirInfo = new DirectoryInfo(PathToPhoto);
             List<Photo> photos = new List<Photo>();
 
@@ -150,7 +152,7 @@ namespace ImageProcessor
                 Console.WriteLine($"{count}/{photos.Count}");
                 Image image = Image.FromFile(photo.GetFileInfo.FullName);
 
-                string GPS = ImageProcessor.GetGPS(photo);
+                string GPS = image.GetGPS();
                 string result = null;
 
                 if (GPS != null)
@@ -159,115 +161,64 @@ namespace ImageProcessor
                     WebResponse response = request.GetResponse();
                     using (Stream stream = response.GetResponseStream())
                     {
-                        using (StreamReader reader = new StreamReader(stream))
+                        XDocument doc = XDocument.Load(stream);
+                        
+                        Console.WriteLine(doc.Element("ymaps"));
+
+                        foreach (XElement el in doc.Root.Elements()) // заходим в корневой каталог
                         {
-                            string read = $@"{reader.ReadToEnd()}";
-                            var adapter = new StreamWriter(@"C:\Users\User\source\repos\ImageProcessor\ImageProcessor\ImageProcessor.xml");
-
-                            adapter.Write(read);
-                            adapter.Dispose();
-
-                            XmlSerializer xmlSerializer = new XmlSerializer(typeof(GeoObjectCollection));
-
-                            using (XmlReader xmlreader = XmlReader.Create(@"C:\Users\User\source\repos\ImageProcessor\ImageProcessor\ImageProcessor.xml"))
+                           foreach (XElement element in el.Elements())  // ymaps
                             {
-                                while (xmlreader.Read())
+                                if (element.Name.LocalName == "featureMember")  // ищем featureMember
                                 {
-                                    if (xmlreader.IsStartElement())
+                                    foreach(XElement node in element.Elements()) // featureMember
                                     {
-                                        if (xmlreader.Name == "text")
+                                        if (node.Name.LocalName == "GeoObject")
                                         {
-                                            xmlreader.Read();
-                                            result = xmlreader.Value;
-                                            break;
+                                            foreach (XElement node2 in node.Elements()) // GeoObject
+                                            {
+                                                if (node2.Name.LocalName == "metaDataProperty")
+                                                {
+                                                    foreach (XElement node3 in node2.Elements()) // metaDataProperty
+                                                    {
+                                                        if(node3.Name.LocalName == "GeocoderMetaData")
+                                                        foreach (XElement node4 in node3.Elements()) // GeocoderMetaData
+                                                        {
+                                                            if (node4.Name.LocalName == "text")
+                                                            {
+                                                                result = node4.Value;
+                                                                goto Finish;
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            }
                                         }
                                     }
                                 }
                             }
-                            adapter.Dispose();
-                            adapter.Close();
                         }
+
+                        Finish :
+
+                        string destFolder = $@"{destDir}\{result}";
+
+                        if (!Directory.Exists(destFolder))
+                        {
+                            Directory.CreateDirectory(destFolder);
+                        }
+
+                        image.Save($@"{destFolder}\{photo.GetName}{ photo.GetFileInfo.Extension}", ImageFormat.Jpeg);
+
                     }
                     response.Close();
-
-                    string destFolder = $@"{destDir}\{result}";
-
-                    if (!Directory.Exists(destFolder))
-                    {
-                        Directory.CreateDirectory(destFolder);
-                    }
-
-                    image.Save($@"{destFolder}\{photo.GetName}{ photo.GetFileInfo.Extension}", ImageFormat.Jpeg);
-
                 }
-
-
-                image.Dispose();
-                count++;
+                
+                    image.Dispose();
+                    count++;
             }
-        }
-
-        public static string DateTimeToString(DateTime date)
-        {
-            return $@"{date.Day}_{date.Month}_{date.Year}_{date.Hour}_{date.Minute}_{date.Second}";
-        }
-
-        public static string GetYear(DateTime date)
-        {
-            return $@"{date.Year}";
-        }
-
-        public static DateTime GetImageDate(Photo photo)
-        {
-            try
-            {
-                Image image = Image.FromFile(photo.GetFileInfo.FullName);
-                PropertyItem propItem = image.GetPropertyItem(36867);
-                string dateTaken = new System.Text.RegularExpressions.Regex(":").Replace(System.Text.Encoding.UTF8.GetString(propItem.Value), "-", 2);
-                return DateTime.Parse(dateTaken);
+              
             }
-            catch
-            {
-                return photo.GetFileInfo.CreationTime;
-            }
-        }
 
-        public static string GetGPS(Photo photo)
-        {
-            try
-            {
-                Image image = Image.FromFile(photo.GetFileInfo.FullName);
-                string gpsLatitudeRef = BitConverter.ToChar(image.GetPropertyItem(1).Value, 0).ToString();
-                string latitude = DecodeGPS(image.GetPropertyItem(2));
-                string gpsLongitudeRef = BitConverter.ToChar(image.GetPropertyItem(3).Value, 0).ToString();
-                string longitude = DecodeGPS(image.GetPropertyItem(4));
-                return $"{gpsLatitudeRef} {latitude} {gpsLongitudeRef} {longitude}";
-            }
-            catch
-            {
-                return null;
-            }
-        }
-
-        private static string DecodeGPS(PropertyItem propertyItem)
-        {
-            uint dN = BitConverter.ToUInt32(propertyItem.Value, 0);
-            uint dD = BitConverter.ToUInt32(propertyItem.Value, 4);
-            uint mN = BitConverter.ToUInt32(propertyItem.Value, 8);
-            uint mD = BitConverter.ToUInt32(propertyItem.Value, 12);
-            uint sN = BitConverter.ToUInt32(propertyItem.Value, 16);
-            uint sD = BitConverter.ToUInt32(propertyItem.Value, 20);
-
-            decimal deg;
-            decimal min;
-            decimal sec;
-            
-            if (dD > 0) { deg = (decimal)dN / dD; } else { deg = dN; }
-            if (mD > 0) { min = (decimal)mN / mD; } else { min = mN; }
-            if (sD > 0) { sec = (decimal)sN / sD; } else { sec = sN; }
-
-            if (sec == 0) return string.Format("{0}° {1:0.###}'", deg, min);
-            else return string.Format("{0}° {1:0}' {2:0.#}\"", deg, min, sec);
         }
     }
-}

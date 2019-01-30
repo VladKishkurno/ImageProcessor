@@ -17,8 +17,8 @@ namespace ImageProcessor
                 Console.WriteLine("Выберите 'Y' для сортировки фотографий по годам");
                 Console.WriteLine("Выберите 'G' для сортировки фотографий по местоположению");
                 Console.WriteLine("Выберите 'R' для переименования фотографий  по дате их создания");
-                Console.WriteLine("Выберите 'A'   для добавления даты снимка на фото");
-                Console.WriteLine("Выберите 'E'   для выхода из программы");
+                Console.WriteLine("Выберите 'A' для добавления даты снимка на фото");
+                Console.WriteLine("Выберите 'E' для выхода из программы");
 
                 switch (Console.ReadKey().KeyChar)
                 {
