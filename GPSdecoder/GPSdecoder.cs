@@ -30,6 +30,8 @@ namespace GPSdecoder
 
             if (sec == 0) return string.Format("{0}° {1:0.###}'", deg, min);
             else return string.Format("{0}° {1:0}' {2:0.#}\"", deg, min, sec);
+
         }
+
     }
 }
