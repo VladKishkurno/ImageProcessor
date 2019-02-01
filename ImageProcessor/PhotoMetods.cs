@@ -14,7 +14,17 @@ namespace ImageProcessor
 {
     public partial class Photo
     {
-        public void SaveAs(params string[] listString)
+        public void SaveAs(string pathToFolder)
+        {
+            SaveAs(pathToFolder);
+        }
+
+        public void SaveAs(string pathToFolder, string name)
+        {
+            SaveAs(pathToFolder, name);
+        }
+
+        private void Save(params string[] listString)
         {
             string destFolder = null;
             int i = 1;
@@ -27,17 +37,17 @@ namespace ImageProcessor
             if (listString.Length > 1)
             {
                 destFolder = $@"{listString[0]}\{listString[1]}{_fileInfo.Extension}";
+                while (File.Exists(destFolder))
+                {
+                    destFolder = $@"{listString[0]}\{listString[1]}({i}){_fileInfo.Extension}";
+                    i++;
+                }
             }
             else
             {
                 destFolder = $@"{listString[0]}\{_fileInfo.Name}";
             }
 
-            while (File.Exists(destFolder))
-            {
-                destFolder = $@"{listString[0]}\{listString[1]}({i}){_fileInfo.Extension}";
-                i++;
-            }
 
             _image.Value.Save(destFolder, ImageFormat.Jpeg);
         }
