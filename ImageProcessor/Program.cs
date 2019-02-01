@@ -11,7 +11,7 @@ namespace ImageProcessor
         static void Main(string[] args)
         {
             string PathToPhoto = @"D:\Download\New wallpapers №7";
-
+            
             while (true)
             {
                 Console.WriteLine("Выберите 'Y' для сортировки фотографий по годам");

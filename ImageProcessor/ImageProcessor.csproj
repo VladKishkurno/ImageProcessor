@@ -51,10 +51,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DateTimeExtation.cs" />
-    <Compile Include="ImageExtention.cs" />
     <Compile Include="ImageProcessor.cs" />
-    <Compile Include="IWebGPSDecoder.cs" />
     <Compile Include="Photo.cs" />
+    <Compile Include="PhotoMetods.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

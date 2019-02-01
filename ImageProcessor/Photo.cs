@@ -12,19 +12,26 @@ using System.Drawing.Imaging;
 
 namespace ImageProcessor
 {
-    public class Photo : IWebGPSDecoder
+    public partial class Photo
     {
-        private FileInfo FileInfo;
-        private string Name;
+        private FileInfo _fileInfo;
+        private string _name;
         private Lazy<Image> _image;
+        private Lazy<string> _location;
 
         public Photo (FileInfo fileInfo)
         {
-            this.FileInfo = fileInfo;
-            this.Name = fileInfo.Name;
+            this._fileInfo = fileInfo;
+            this._name = fileInfo.Name;
+
             _image = new Lazy<Image>(() =>
             {
-                return Image.FromFile(this.FileInfo.FullName);
+                return Image.FromFile(this._fileInfo.FullName);
+            });
+
+            this._location = new Lazy<string>(() =>
+            {
+                return WebRequestToService(GetGPS());
             });
         }
         public Image MyImage
@@ -34,11 +41,35 @@ namespace ImageProcessor
                 return _image.Value;
             }
         }
+
+        public string Location
+        {
+            get
+            {
+                return _location.Value;
+            }
+        }
+
+        public string GetDate
+        {
+            get
+            {
+                return GetImageDate().DateTimeToString();
+            }
+        }
+
+        public string GetYear
+        {
+            get
+            {
+                return GetImageDate().GetYear();
+            }
+        }
         public FileInfo GetFileInfo
         {
             get
             {
-                return FileInfo;
+                return _fileInfo;
             }
         }
 
@@ -46,29 +77,8 @@ namespace ImageProcessor
         {
             get
             {
-                return Name;
+                return _name;
             }
-        }
-
-
-        public string WebRequestToService(string GPS)
-        {
-            WebRequest request = WebRequest.Create($"https://geocode-maps.yandex.ru/1.x/?geocode={GPS}");
-            WebResponse response = request.GetResponse();
-            using (Stream stream = response.GetResponseStream())
-            {
-                XDocument doc = XDocument.Load(stream);
-                response.Close();
-
-                foreach (XElement el in doc.Descendants())
-                {
-                    if (el.Name.LocalName == "text")
-                    {
-                        return el.Value;
-                    }
-                }
-            }
-            return "";
         }
     }
 }
