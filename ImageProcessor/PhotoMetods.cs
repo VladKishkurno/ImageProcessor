@@ -16,12 +16,12 @@ namespace ImageProcessor
     {
         public void SaveAs(string pathToFolder)
         {
-            SaveAs(pathToFolder);
+            Save(pathToFolder);
         }
 
         public void SaveAs(string pathToFolder, string name)
         {
-            SaveAs(pathToFolder, name);
+            Save(pathToFolder, name);
         }
 
         private void Save(params string[] listString)
